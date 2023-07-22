@@ -1,0 +1,69 @@
+{% load static %}
+<div class="nav-wrapper">
+
+	<!--Home -->
+	<a href="{% url 'home' %}">
+		<div class="dots">
+			<div id="dot-1" class="dots-dot"></div>
+			<div id="dot-2" class="dots-dot"></div>
+			<div id="dot-3" class="dots-dot"></div>
+		</div>
+	</a>
+
+
+	<ul id="navigation">
+		<!--<h2 id="close-btn u-center-text"></h2>-->
+		<li><a href="{% url 'home' %}#contact" class="default-font">Contact</a></li>
+		<li><a href="{% url 'projects' %}" class="default-font">Projects</a></li>
+		{% if request.user.is_authenticated %}
+		<li><a href="{% url 'create_post' %}" class="default-font">Create Post</a></li>
+		<li><a href="#" class="default-font"> Account</a></li>
+		<li><a href="#" class="default-font">Logout</a></li>
+		{% else %}
+		<li><a href="#" class="default-font">Login</a></li>
+		{% endif %}
+	</ul>
+
+	<img id="menu-icon" src="{% static 'img/menu.png' %}">
+
+</div>
+
+
+<script type="text/javascript">
+	let menu = 'closed'
+
+	let menuIcon = document.getElementById('menu-icon')
+	let navigation = document.getElementById('navigation')
+	let closeBtn = document.getElementById('close-btn')
+
+	menuIcon.addEventListener('click', toggleMenu)
+	closeBtn.addEventListener('click', toggleMenu)
+
+
+	function toggleMenu() {
+		if (menu == 'closed') {
+			navigation.style.display = 'block'
+			closeBtn.style.display = 'block'
+			menu = 'open'
+		} else {
+			navigation.style.display = 'none'
+			closeBtn.style.display = 'none'
+			menu = 'closed'
+		}
+	}
+
+
+	// Attaching the event listener function to window's resize event
+
+	window.addEventListener("resize", function () {
+		let width = document.documentElement.clientWidth;
+		if (width > 1080) {
+			navigation.style.display = 'block'
+		} else {
+			navigation.style.display = 'none'
+		}
+		menu = 'closed'
+		closeBtn.style.display = 'none'
+	});
+
+</script>
