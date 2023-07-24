@@ -3,7 +3,8 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from .models import Post
+from .models import *
+from user.models import Profile
 
 
 
@@ -17,21 +18,23 @@ class PostForm(ModelForm):
 		widgets = {
 			'tags':forms.CheckboxSelectMultiple(),
 		}
-"""class CustomUserCreationForm(UserCreationForm):
+class CustomUserCreationForm(UserCreationForm):
+	discipline = forms.CharField()
+	
 
 	class Meta:
 		model = User
-		fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
+		fields = ['username', 'first_name', 'last_name', 'email', 'discipline', 'password1', 'password2']
 
-class UserForm(ModelForm):
+class UserUpdateForm(forms.ModelForm):
 	class Meta:
 		model = User
-		fields = ['first_name', 'last_name', 'email']
+		fields = ['username', 'first_name', 'last_name', 'email']
 		
 
-class ProfileForm(ModelForm):
+class ProfileUpdateForm(forms.ModelForm):
 	class Meta:
 		model = Profile
-		fields = '__all__'
-		exclude = ['user']
-		"""
+		fields = ['profl_pic']
+	
+   

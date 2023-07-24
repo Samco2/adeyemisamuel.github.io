@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .decorators import *
 
 # sending email from contact
 from django.core.mail import EmailMessage
@@ -48,6 +49,7 @@ def profile(request):
     return render(request, 'base/profile.html')
 
 #CRUD VIEWS
+@admin_only
 @login_required(login_url="home")
 def createPost(request):
 	form = PostForm()
@@ -61,6 +63,7 @@ def createPost(request):
 	context = {'form':form}
 	return render(request, 'base/post_form.html', context)
 
+@admin_only
 @login_required(login_url="home")
 def updatePost(request, slug):
 	post = Post.objects.get(slug=slug)
@@ -75,6 +78,7 @@ def updatePost(request, slug):
 	context = {'form':form}
 	return render(request, 'base/post_form.html', context)
 
+@admin_only
 @login_required(login_url="home")
 def deletePost(request, slug):
 	post = Post.objects.get(slug=slug)

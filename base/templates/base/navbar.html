@@ -15,12 +15,13 @@
 		<!--<h2 id="close-btn u-center-text"></h2>-->
 		<li><a href="{% url 'home' %}#contact" class="default-font">Contact</a></li>
 		<li><a href="{% url 'projects' %}" class="default-font">Projects</a></li>
+		<li><a href="{% url 'blog-home' %}" class="default-font">blog</a></li>
 		{% if request.user.is_authenticated %}
 		<li><a href="{% url 'create_post' %}" class="default-font">Create Post</a></li>
-		<li><a href="#" class="default-font"> Account</a></li>
-		<li><a href="#" class="default-font">Logout</a></li>
+
+		<li><a href="{% url 'logout' %}" class="default-font">Logout</a></li>
 		{% else %}
-		<li><a href="#" class="default-font">Login</a></li>
+		<li><a href="{% url 'login' %}" class="default-font">Login</a></li>
 		{% endif %}
 	</ul>
 

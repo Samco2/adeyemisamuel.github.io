@@ -3,10 +3,22 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="main-container">
+
+	<div class="media">
+		<img class="rounded-circle account-img" src="{{ user.profile.profl_pic.url }}">
+		<div class="media-body">
+			<h2 class="account-heading">{{ user.username }}</h2>
+			<p class="text-secondary">{{ user.email }}</p>
+			<p class="text-secondary">{{ user.first_name }}</p>
+			<p class="text-secondary">{{ user.last_name }}</p>
+
+		</div>
+	</div>
+
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{form|crispy}}
-		<input class="btn btn-primary" type="submit" value="Save">
+		<input class="btn btn-primary" type="submit" value="Update">
 	</form>
 </div>
 {% endblock content %}
