@@ -97,14 +97,14 @@
 			<input class="btn btn-info" type="submit" value="Submit">
 		</form>
 		{% else %}
-		<p>Create an account to comment:</p>
-		<a class="btn btn-primary" href="#">Register/Login</a>
+		<p>Login or Create an account to comment:</p>
+		<a class="btn btn-primary" href="{% url 'login' %}">Login/Register</a>
 		{% endif %}
 
 		<hr>
 		{% for comment in post.postcomment_set.all %}
 		<div class="comment">
-			<img class="author-pic" src="{{comment.author.profile_pic.url}}">
+			<img class="author-pic" src="{{comment.author.profl_pic.url}}">
 			<div>
 				<p class="comment-author">{{comment.author}}: {{comment.created|date:"M-d-Y"}}</p>
 				<p class="comment-body">{{comment.body}}</p>

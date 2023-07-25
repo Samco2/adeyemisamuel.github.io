@@ -76,7 +76,7 @@
 <body>
 
 	<section class="home">
-		<div class="container">
+		<div class="container-1">
 			<div class="home-title align">
 				<h1 class="mg-b">Hi, I'm Samuel Adeyemi</h1>
 				<h2 class="lead">Full Stack Software Engineer</h2>
@@ -228,29 +228,143 @@
 	</section>
 
 	<section class="s2">
-		<div class="main-container">
-			<a href=""></a>
-			<h3 style="text-align: center;">Get In Touch</h3>
+		<container>
+			<div class="row">
+				<div class="col-1-of-2 ov">
+					<h3 style="text-align: center;">What people Say</h3>
+					<div class="container">
+						<div class="row align">
+							<div class="slider-con">
+								<div class="wrapper">
+									<div class="slider-holder">
+										<div id="slider-1">
+											<div class="owl-item cloned">
+												<div>
+													<div class="testimonial">
+														<blockquote class="mb-4">
+															<p class="mg-s">“Lorem ipsum dolor sit amet consectetur
+																adipisicing elit.
+																Consectetur unde reprehenderit aperiam quaerat fugiat
+																repudiandae explicabo animi minima fuga beatae illum
+																eligendi
+																incidunt consequatur. Amet dolores excepturi earum unde
+																iusto.”
+															</p>
+														</blockquote>
+														<figure class="u-margin-bottom-small  d-flex align">
+															<div><img src="static/img/ben_thompson.jpg" alt="Image"
+																	class="w-50 img-fluid mb-1">
+															</div>
+															<p>Robert Spears</p>
+														</figure>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="slider-2">
+											<div class="owl-item cloned">
+												<div>
+													<div class="testimonial">
+														<blockquote class="u-margin-bottom-small">
+															<p class="mg-s">“Lorem ipsum dolor sit amet consectetur
+																adipisicing elit.
+																Consectetur unde reprehenderit aperiam quaerat fugiat
+																repudiandae explicabo animi minima fuga beatae illum
+																eligendi incidunt consequatur. Amet dolores excepturi
+																earum unde iusto.”</p>
+														</blockquote>
+														<figure class="u-margin-bottom-small d-flex align">
+															<div><img src="static/img/dave_simpson.jpg" alt="Image"
+																	class="w-50 img-fluid mb-1">
+															</div>
+															<p>Bruce Rogers</p>
+														</figure>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="slider-3">
+											<div class="owl-item active">
+												<div>
+													<div class="testimonial">
+														<blockquote class="u-margin-bottom-small">
+															<p class="mg-s">“Lorem ipsum dolor sit amet consectetur
+																adipisicing elit. Consectetur unde reprehenderit
+																aperiam quaerat fugiat repudiandae explicabo
+																animi minima fuga beatae illum eligendi incidunt
+																consequatur. Amet dolores excepturi earum unde
+																iusto.”</p>
+														</blockquote>
+														<figure class="u-margin-bottom-small d-flex align">
+															<div><img src="static/img/chris_stewart.jpg" alt="Image"
+																	class="w-50 img-fluid mb-1">
+															</div>
+															<p>John Smith</p>
+														</figure>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="slider-4">
+											<div class="owl-item">
+												<div>
+													<div class="testimonial">
+														<blockquote class="u-margin-bottom-small">
+															<p class="mg-s">“Lorem ipsum dolor sit amet consectetur
+																adipisicing elit.
+																Consectetur unde reprehenderit aperiam
+																quaerat fugiat repudiandae explicabo
+																animi
+																minima fuga beatae illum eligendi
+																incidunt consequatur. Amet dolores
+																excepturi earum unde iusto.”
+															</p>
+														</blockquote>
+														<figure class="u-margin-bottom-small d-flex align">
+															<div><img src="static/img/benjamin_frank.jpg" alt="Image"
+																	class="w-50 img-fluid mb-1">
+															</div>
+															<p>Christine Aguilar</p>
+														</figure>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="button-holder">
+									<span href="#slider-1" class="dots"></span>
+									<span href="#slider-2" class="dots"></span>
+									<span href="#slider-3" class="dots"></span>
+									<span href="#slider-4" class="dots"></span>
+								</div>
+							</div>
+						</div>
+					</div>
 
-			<form id="contact-form" method="POST" action="{% url 'send_email' %}">
-				{% csrf_token %}
-				<a name="contact"></a>
+				</div>
+				<div class="col-1-of-2">
 
-				<label>Name</label>
-				<input required class="input-field" type="text" name="name">
+					<a href=""></a>
+					<h3 style="text-align: center;">Get In Touch</h3>
+					<form id="contact-form" method="POST" action="{% url 'send_email' %}">
+						{% csrf_token %}
+						<a name="contact"></a>
+						<label>Name</label>
+						<input required class="input-field" type="text" name="name">
+						<label>Subject</label>
+						<input required class="input-field" type="text" name="subject">
+						<label>Email</label>
+						<input required class="input-field" type="text" name="email">
+						<label>Message</label>
+						<textarea required class="input-field" name="message"></textarea>
+						<input id="submit-btn" type="submit" value="Send">
+					</form>
 
-				<label>Subject</label>
-				<input required class="input-field" type="text" name="subject">
+				</div>
 
-				<label>Email</label>
-				<input required class="input-field" type="text" name="email">
-
-				<label>Message</label>
-				<textarea required class="input-field" name="message"></textarea>
-
-				<input id="submit-btn" type="submit" value="Send">
-			</form>
-		</div>
+			</div>
+		</container>
 	</section>
 
 	<script type="text/javascript">

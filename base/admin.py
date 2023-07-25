@@ -7,3 +7,7 @@ from .models import *
 
 admin.site.register(Post)
 admin.site.register(Tag)
+admin.site.register(PostComment)
+admin.site.register(Testimonial)
+
+

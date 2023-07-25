@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .decorators import *
+from django.contrib import messages
 
 # sending email from contact
 from django.core.mail import EmailMessage
@@ -11,7 +12,7 @@ from django.template.loader import render_to_string
 
 
 
-from .models import Post
+from .models import *
 from .forms import PostForm
 from .filters import PostFilter
 
@@ -27,7 +28,7 @@ def projects(request):
     posts = myFilter.qs
     page = request.GET.get('page')
     paginator = Paginator(posts, 2)
-    
+
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
@@ -35,13 +36,24 @@ def projects(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    
+
     context = {'posts': posts, 'myFilter':myFilter}
 
     return render(request, 'base/projects.html', context)
 
 def project(request, slug):
     post = Post.objects.get(slug=slug)
+
+	#Getting feedback on each detail project
+    if request.method == 'POST':
+        PostComment.objects.create(
+			author=request.user.profile,
+			post=post,
+			body=request.POST['comment']
+			)
+        messages.success(request, "You're comment was successfuly posted!")
+        return redirect('project', slug=post.slug)
+
     context = {'post': post}
     return render(request, 'base/project.html', context)
 
@@ -111,4 +123,3 @@ def sendEmail(request):
 		email.send()
 
 	return render(request, 'base/email_sent.html')
-    
