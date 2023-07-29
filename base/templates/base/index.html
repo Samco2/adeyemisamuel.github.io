@@ -105,9 +105,11 @@
 						<div id="preview" class="pos2">
 							<div id="corner-tl" class="corner align-g"></div>
 							<div id="corner-tr" class="corner align-g"></div>
-							<h3>What I Do</h3>
+							<!--<h3>What I Do</h3>
 							<p>I was a research & graduate assitant at University, now I tickle my brain with
-								projects and coding.</p>
+								projects and coding.</p>-->
+							<h3>Who are mine</h3>
+							<p>I'm a passionate developer but more importantly I'm passionate about technology.</p>
 							<div id="corner-br" class="corner"></div>
 							<div id="corner-bl" class="corner"></div>
 						</div>
@@ -217,13 +219,18 @@
 							<h6 class="post-title">{{post.headline}}</h6>
 							<p class="post-intro">{{post.sub_headline}}</p>
 							<a href="{%  url 'project' post.slug %}">Read More</a>
+							{% if post.link is not None %}
+							<a href="{{post.link}}" target="_blank" class="">
+								Actual-website
+							</a>
+							{% endif %}
 						</div>
 					</div>
 				</div>
 				{% endfor %}
 			</div>
 
-			<p align="center">
+			<p>
 				<a href="{% url 'projects' %}">View More</a>
 			</p>
 		</div>

@@ -19,6 +19,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
 	headline = models.CharField(max_length=200)
+	link = models.CharField(null=True, blank=True, max_length=300)
 	sub_headline = models.CharField(max_length=200, null=True, blank=True)
 	image = models.ImageField(null=True, blank=True, upload_to="media", default="/media/placeholder.png")
 	

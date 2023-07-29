@@ -37,6 +37,13 @@
 					<p class="post-intro">{{post.sub_headline}}</p>
 					<a href="{% url 'project' post.slug %}">Read More</a>
 
+
+					{% if post.link is not None %}
+					<a href="{{post.link}}" target="_blank" class="">
+						Actual-website
+					</a>
+					{% endif %}
+
 					{% if request.user.is_staff %}
 					| <a href="{% url 'update_post' post.slug %}">Edit</a>
 					| <a href="{% url 'delete_post' post.slug %}">Delete</a>

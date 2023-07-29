@@ -95,6 +95,12 @@
 
 	<p>{{post.body|safe}}</p>
 
+	{% if post.link is not None %}
+	<a href="{{post.link}}" target="_blank" class="">
+		Actual-website
+	</a>
+	{% endif %}
+
 	<div class="comments-wrapper">
 		<h5>Comments: {{post.postcomment_set.all.count}}</h5>
 		<hr>
