@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'storages',
     'user',
-    'blog'
+    'blog',
+    'embed_video',
 ]
 
 

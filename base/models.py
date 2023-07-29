@@ -1,10 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
+from embed_video.fields import EmbedVideoField
 
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from user.models import *
+
+
+
+
 # Create your models here.
 class Tag(models.Model):
 	name = models.CharField(max_length=200)
@@ -23,6 +28,7 @@ class Post(models.Model):
 	featured = models.BooleanField(default=False)
 	tags = models.ManyToManyField(Tag, null=True, blank=True)
 	slug = models.SlugField(null=True, blank=True)
+	video = EmbedVideoField(null=True, blank=True)
 
 	def __str__(self):
 		return self.headline
@@ -43,7 +49,7 @@ class Post(models.Model):
 
 		super().save(*args, **kwargs)
 
-class Testimonial (models.Model):
+class Testimonial(models.Model):
 	first_name = models.CharField(max_length=200)
 	last_name = models.CharField(max_length=200)
 	remark = models.CharField(max_length=300)
