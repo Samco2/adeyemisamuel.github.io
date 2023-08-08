@@ -4,9 +4,10 @@
 	<!--Home -->
 	<a href="{% url 'home' %}">
 		<div class="dots">
-			<div id="dot-1" class="dots-dot"></div>
+			<img src="{% static 'img/logo.png' %}" class="img-fluid mb-1">
+			<!--<div id="dot-1" class="dots-dot"></div>
 			<div id="dot-2" class="dots-dot"></div>
-			<div id="dot-3" class="dots-dot"></div>
+			<div id="dot-3" class="dots-dot"></div>-->
 		</div>
 	</a>
 
@@ -21,7 +22,7 @@
 
 		<li><a href="{% url 'logout' %}" class="default-font">Logout</a></li>
 		{% else %}
-		<li><a href="{% url 'login' %}" class="default-font">Login</a></li>
+		<!--<li><a href="{% url 'login' %}" class="default-font">Login</a></li>-->
 		{% endif %}
 	</ul>
 

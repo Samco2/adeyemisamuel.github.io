@@ -41,18 +41,21 @@
 	<link rel="stylesheet" href="{% static 'frontend/css/style.css' %}" />
 
 
-	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 
 
 	<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/default.css' %}">
 	<link id="theme-style" rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 </head>
 
-<!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script
 <script type="text/javascript">
 	var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 	(function () {
@@ -65,55 +68,52 @@
 	})();
 </script>
 <!--End of Tawk.to Script-->
-<style>
-	.whatapp {
-		left: 0.5%;
-		bottom: 0.5%;
-		position: fixed;
-	}
-</style>
+
 
 <body>
 
 	<section class="home">
 		<div class="container-1">
 			<div class="home-title align">
-				<h1 class="mg-b">Hi, I'm Samuel Adeyemi</h1>
-				<h2 class="lead">Full Stack Software Engineer</h2>
+				<h1 class="mg-b">Samuel Adeyemi</h1>
+				<h2 class="lead">Full Stack Dev</h2>
+			</div>
+			<div class="d-flex pos">
+				<h5 class="u-center-text">Chose a Theme</h5>
+				<div id="theme-options-wrapper">
+					<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
+					<div data-mode="light" id="blue-mode" class="theme-dot"></div>
+					<div data-mode="green" id="green-mode" class="theme-dot"></div>
+					
+					<!--<div data-mode="blue" id="light-mode" class="theme-dot"></div>-->
+				</div>
+
+				<!--<p id="settings-note">*Theme settings will be saved for<br>your next vist</p>-->
 			</div>
 
 
 			<div class="site-wrapper">
 				{% include 'base/navbar.html' %}
 
-				<div class="left-column">
-					<img id="profile_pic" src="{% static 'img/photo_3.png' %}" class="mb-1">
-					<h5 class="u-center-text">Chose a Theme</h5>
-					<div id="theme-options-wrapper">
-						<div data-mode="blue" id="light-mode" class="theme-dot"></div>
-						<div data-mode="light" id="blue-mode" class="theme-dot"></div>
-						<div data-mode="green" id="green-mode" class="theme-dot"></div>
-						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
-					</div>
-
-					<p id="settings-note">*Theme settings will be saved for<br>your next vist</p>
+				<div class="left-column animate__animated animate__fadeInLeft">
+					<img id="profile_pic" src="{% static 'img/photo_113.png' %}" class="mb-1">
 				</div>
 
-				<div class="right-column">
+				<div class="right-column animate__animated animate__zoomIn">
 
-					<div id="preview-shadow" class="align-items-center">
+					<!--<div id="preview-shadow" class="align-items-center">
 						<div id="preview" class="pos2">
 							<div id="corner-tl" class="corner align-g"></div>
 							<div id="corner-tr" class="corner align-g"></div>
-							<!--<h3>What I Do</h3>
+							<h3>What I Do</h3>
 							<p>I was a research & graduate assitant at University, now I tickle my brain with
-								projects and coding.</p>-->
+								projects and coding.</p>
 							<h3>Who are mine</h3>
 							<p>I'm a passionate developer but more importantly I'm passionate about technology.</p>
 							<div id="corner-br" class="corner"></div>
 							<div id="corner-bl" class="corner"></div>
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
@@ -123,34 +123,44 @@
 	<section class="about-wrapper s2">
 		<div class="main-container">
 			<div class="row mb-4 align">
-				<div class="u-center-text align aos-init aos-animate" data-aos="fade">
+				<div class="u-center-text align animate__animated animate__bounceInDown" data-aos="">
 					<h2 class="about_section-title mb-1">More about me</h2>
 				</div>
 			</div>
-			<div class="row" style="align-content:center">
-				<div class="col-1-of-3  aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-					<hr>
-					<p>I am passionate full stack software Engineer and I used python, Django-framework, CSS3, HTLM,
-						React and basic javascript to build new projects.</p>
+			<div class="row">
+				<div class="col-1-of-2 animate__animated animate__fadeInLeft" data-aos="fade-up" data-aos-delay="200">
 
-					<p>While I keep busy learning, coding & working with team, I still take interviews in search of a
-						great team & projects
-						that interest me.</p>
+					<div id="skills">
+						<p class='m-txt'>I am passionate full stack software Engineer and I used python,
+							Django-framework, CSS3,
+							HTLM,
+							React and basic javascript to build new projects.</p>
+					</div>
+					<br> <br> <br> <br> <br> <br>
+					<div id="skills">
+						<p m-txt>While I keep busy learning, coding & working with team, I still take interviews in
+							search
+							of a
+							great team & projects
+							that interest me.</p>
+					</div>
 
 
-					<hr>
+
 				</div>
-				<div class="col-1-of-3 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+				<div class="col-1-of-2 animate__animated animate__fadeInRight">
 					<div id="skills" style="display: block !important;" class="u-center-text">
 						<h4 style="display:inline-block;">TOP EXPERTISE</h4>
 						<br>
 						<p>Fullstack developer with primary focus on Django + React:</p>
 					</div>
-					<p><a target="_blank" href="{% static 'resumee.pdf' %}">Download Resume</a></p>
+					<div class=" row align mb-4 ">
+						<p><a class="align" target="_blank" href="{% static 'resumee.pdf' %}">Download Resume</a></p>
+					</div>
 
 					<div id="skills" style="display: block !important;" class="font-1 u-center-text">
 						<h4 style="display:inline-block;">TOP Kits</h4>
-						<div style="display: flex !important;" class="align">
+						<div style="display: flex !important; gap: 3rem" class="align">
 							<ul>
 								<li>Python</li>
 								<li>Django</li>
@@ -169,39 +179,38 @@
 					</div>
 
 				</div>
-				<div class="col-1-of-3  aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-					<div class="mg-4 aos-init aos-animate" data-aos="fade-up">
-						<h4 id="skills" class="u-margin-bottom-small">Find me on Social Medial</h4>
 
-						<ul class="">
-
-							<li class="social-a"><a target="_blank" href="https://github.com/Samco2"><img
-										src="{% static 'img/github.png' %}" class="team-mate-icon">github</a>
-							</li>
-							<li class="social-a"><a target="_blank" href="https://twitter.com/"><img
-										src="{% static 'img/twitter.png' %}" class="team-mate-icon">Twitter</a>
-							</li>
-							<li class="social-a"><a target="_blank"
-									href="https://www.linkedin.com/in/samuel-adeyemi-881768285/"><img
-										src="{% static 'img/linkedin.png' %}" class="team-mate-icon">lindlin</a>
-							</li>
-							<li class="social-a"><a target="_blank" href="https://www.instagram.com"><img
-										src="{% static 'img/instagram.png' %}"
-										class="team-mate-icon">samco@instagram</a>
-							</li>
-						</ul>
+			</div>
 
 
-						<!--<div class="social-links">
-						<img id="social_img" src="{% static 'img/follow.jpg' %}">
-						<h3>Find me on Twitter & Youtube</h3>
+			<div class=" row mg-4 m-t aos-init aos-animate" data-aos="fade-up">
+				<ul class="row align dl">
 
-						<a target="_blank" href="https://www.youtube.com/c/samco">YouTube: @samco</a>
-						<br>
-						<a target="_blank" href="https://twitter.com/samco11">Twitter: @samco</a>
-					</div>-->
-					</div>
-				</div>
+					<li class="social-a"><a target="_blank" href="https://github.com/Samco2"><img
+								src="{% static 'img/github.png' %}" class="team-mate-icon"></a>
+					</li>
+					<li class="social-a"><a target="_blank" href="https://twitter.com/"><img
+								src="{% static 'img/twitter.png' %}" class="team-mate-icon"></a>
+					</li>
+					<li class="social-a"><a target="_blank"
+							href="https://www.linkedin.com/in/samuel-adeyemi-881768285/"><img
+								src="{% static 'img/linkedin.png' %}" class="team-mate-icon"></a>
+					</li>
+					<li class="social-a"><a target="_blank" href="https://www.instagram.com"><img
+								src="{% static 'img/instagram.png' %}" class="team-mate-icon"></a>
+					</li>
+				</ul>
+
+
+				<!--<div class="social-links">
+					<img id="social_img" src="{% static 'img/follow.jpg' %}">
+					<h3>Find me on Twitter & Youtube</h3>
+
+					<a target="_blank" href="https://www.youtube.com/c/samco">YouTube: @samco</a>
+					<br>
+					<a target="_blank" href="https://twitter.com/samco11">Twitter: @samco</a>
+				</div>-->
+
 			</div>
 		</div>
 	</section>
@@ -210,7 +219,56 @@
 		<div class="main-container">
 			<h3 style="text-align: center;">Some of my past projects</h3>
 
-			<div class="post-wrapper">
+			<div id="slider">
+				<input type="radio" name="slider" id="slide1" checked>
+				<input type="radio" name="slider" id="slide2">
+				<input type="radio" name="slider" id="slide3">
+				<input type="radio" name="slider" id="slide4">
+				<!-- <input type="radio" name="slider" id="slide5"> -->
+				<div id="slides">
+					<div id="overflow">
+						<div class="inner">
+							{% for post in posts %}
+							<div class="slide slide{% if forloop.counter0 == 0%} active {% endif %}">
+								<div class="slide-content">
+									<div class="post">
+										<img class="thumbnail" src="{{post.image.url}}">
+
+									</div>
+									<div class="post-preview">
+										<h2 class="post-title">{{post.headline}}</h2>
+										<h6 class="post-intro">{{post.sub_headline}}</h6>
+										<a href="{%  url 'project' post.slug %}">Read More</a>
+										<br>
+										{% if post.link is not None %}
+										<a href="{{post.link}}" target="_blank" class="">
+											Actual-website
+										</a>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div id="controls">
+					<label for="slide1"></label>
+					<label for="slide2"></label>
+					<label for="slide3"></label>
+					<label for="slide4"></label>
+					<!-- <label for="slide5"></label> -->
+				</div>
+				<div id="bullets">
+					<label for="slide1"></label>
+					<label for="slide2"></label>
+					<label for="slide3"></label>
+					<label for="slide4"></label>
+					<!-- <label for="slide5"></label> -->
+				</div>
+			</div>
+
+			<!--<div class="post-wrapper">
 				{% for post in posts %}
 				<div>
 					<div class="post">
@@ -223,15 +281,16 @@
 							<a href="{{post.link}}" target="_blank" class="">
 								Actual-website
 							</a>
-							{% endif %}
+							
 						</div>
 					</div>
 				</div>
+				{% endif %}
 				{% endfor %}
-			</div>
+			</div>-->
 
-			<p>
-				<a href="{% url 'projects' %}">View More</a>
+			<p style="float:right">
+				<a href="{% url 'projects' %}">View More &rarr; </a>
 			</p>
 		</div>
 	</section>
@@ -382,10 +441,7 @@
 	</script>
 
 	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-	<a href="https://wa.me/+2348037285847?text=I'm%20here%20to%20response%20to%20your%20request%20promtly"
-		target="_blank" class="whatapp">
-		<img src="{% static '/img/whatsapp.png' %}" alt="whatapp-logo" width="70px">
-	</a>
+
 </body>
 
 </html>

@@ -15,7 +15,7 @@
 	}
 
 	.post-container {
-		width: 900px;
+		width: 1200px;
 		margin: 0 auto;
 		padding-top: 20px;
 		padding-bottom: 20px;
@@ -70,18 +70,24 @@
 	<a class="btn btn-sm btn-danger" href="#">Delete</a>
 	{% endif %}
 
-	{% if post.video == True %}
-	<!-- The video tag: -->
+	{% if not post.video %}
+
+	<!-- The video tag: 
 	{% video post.video as my_video %}
 	URL: {{ my_video.url }}
 	Thumbnail: {{ my_video.thumbnail }}
 	Backend: {{ my_video.backend }}
 
 	{% video my_video "large" %}
-	{% endvideo %}
-
-	{% else %}
+	{% endvideo %}-->
 	<img class="featured_image" src="{{post.image.url}}">
+
+	
+	
+	{% else %}
+	<video  class="video-fluid" src="{{post.video.url}}" controls type="video/mp4"></video>
+	
+	
 	{% endif %}
 
 	{% for tag in post.tags.all %}

@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from embed_video.fields import EmbedVideoField
 
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
@@ -29,7 +28,7 @@ class Post(models.Model):
 	featured = models.BooleanField(default=False)
 	tags = models.ManyToManyField(Tag, null=True, blank=True)
 	slug = models.SlugField(null=True, blank=True)
-	video = EmbedVideoField(null=True, blank=True)
+	video = models.FileField(upload_to= "video/%y", null=True, blank=True)
 
 	def __str__(self):
 		return self.headline
